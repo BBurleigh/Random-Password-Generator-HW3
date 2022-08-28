@@ -10,11 +10,11 @@ This screenshot serves as an example of what can be generated if the user wishes
 
 ![Screenshot (3)](https://user-images.githubusercontent.com/109905208/187090291-5d3ac35d-9e7c-46a3-9d65-e0826f8b065d.png)
 
-Usage
+##Usage
 In theory, any web user who wishes to randomly generate a strong password quicky without having to spend time "thinking" of a clever password will find this site useful.
 
-Credits
+##Credits
 Aside from my instructor and TA, my Sunday tutor assisted me in fixing the error that initially played when "undefined" was generated a certain number of times (based on the inputted character length). Other than w3school.com, one posting on stackoveflow (https://stackoverflow.com/questions/69851109/js-password-generator-character-length-not-working) was particularly helpful in fixing another error.
 
-License
+##License
 None.
