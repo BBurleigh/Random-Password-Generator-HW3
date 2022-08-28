@@ -13,7 +13,7 @@ var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", 
 
 function generatePassword() {
 
-var password = "";
+
 
 var passwordChar = "";
 
@@ -39,18 +39,63 @@ while (true) {
     
     }
 
-    alphabetLowerCase = confirm();
-    alphabetUpperCase = confirm();
-    numbers = confirm();
+    alphabetLowerCase = confirm("If you wish to include lowercase letters, hit 'Okay'. If not, hit 'Cancel'.");
+
+    alphabetUpperCase = confirm("If you wish to include uppercase letters, hit 'Okay'. If not, hit 'Cancel'.");
+
+    numbers = confirm("If you wish to include numbers, hit 'Okay'. If not, hit 'Cancel'.");
+
+    specialCharacters = confirm("If you wish to include special characters, hit 'Okay'. If not, hit 'Cancel'.");
     
-}
+    const passwordDesigner = [];
+
+    if (alphabetLowerCase == true) {
+
+      passwordDesigner(passwordLength).concat(alphabetLowerCase);
+
+    }
+
+    if (alphabetUpperCase == true) {
+
+      passwordDesigner(passwordLength).concat(alphabetUpperCase);
+
+    }
+
+    if (numbers == true) {
+  
+      passwordDesigner(passwordLength).concat(numbers);
+
+    }
+
+    if (specialCharacters == true) {
+
+      passwordDesigner(passwordLength).concat(specialCharacters);
+
+    } else {
+
+      alert("You need to have at least one type of character in your generated password. Please try again.")
+
+    }
+
+    var password = "";
+
+    for ( var i = 0; i < passwordLength; i++) {
+
+      password += passwordChar[Math.floor(Math.random() * passwordChar.length)];
+
+    }
+
+    return (password);
+
+    }
+
 
 
 function writePassword() {
 
   var password = generatePassword(); // create function that creates a password based on what the user determines --> need three arrays (numbers, letters, and special characters)
 
-  var passwordText = document.querySelector("#password");
+  var passwordTeffxt = document.querySelector("#password");
 
   passwordText.value = password;
 
