@@ -47,33 +47,35 @@ while (true) {
 
     specialCharacters = confirm("If you wish to include special characters, hit 'Okay'. If not, hit 'Cancel'.");
     
-    const passwordDesigner = [];
+    var passwordCreator = [];
 
-    if (alphabetLowerCase == true) {
+    if (alphabetLowerCase === true) {
 
-      passwordDesigner(passwordLength).concat(alphabetLowerCase);
-
-    }
-
-    if (alphabetUpperCase == true) {
-
-      passwordDesigner(passwordLength).concat(alphabetUpperCase);
+      passwordCreator.concat(alphabetLowerCase);
 
     }
 
-    if (numbers == true) {
+    if (alphabetUpperCase === true) {
+
+      passwordCreator.concat(alphabetUpperCase);
+
+    }
+
+    if (numbers === true) {
   
-      passwordDesigner(passwordLength).concat(numbers);
+      passwordCreator.concat(numbers);
 
     }
 
-    if (specialCharacters == true) {
+    if (specialCharacters === true) {
 
-      passwordDesigner(passwordLength).concat(specialCharacters);
+      passwordCreator.concat(specialCharacters);
 
-    } else {
+    }
+    
+    if (alphabetLowerCase === false && alphabetUpperCase === false && numbers === false && specialCharacters === false) {
 
-      alert("You need to have at least one type of character in your generated password. Please try again.")
+      alert("You need to have at least one type of character in your generated password. Please try again.");
 
     }
 
@@ -81,11 +83,11 @@ while (true) {
 
     for ( var i = 0; i < passwordLength; i++) {
 
-      password += passwordChar[Math.floor(Math.random() * passwordChar.length)];
+      password += passwordLength[Math.floor(Math.random() * passwordCreator.length)];
 
     }
 
-    return (password);
+    return password;
 
     }
 
